@@ -10,7 +10,7 @@ public class MySpringApp {
 		ClassPathXmlApplicationContext applicationContext=new ClassPathXmlApplicationContext("applicationContext.xml");
 		
 		//TrackCoach/BaseballCoach is the bean id mentioned in applicationContext.xml"  and Coach.class is the interface
-		Coach myCoach=applicationContext.getBean("BaseballCoach",Coach.class);
+		Coach myCoach=applicationContext.getBean("TrackCoach",Coach.class);
 		
 		String workout=myCoach.getDailyWorkout();
 		System.out.println(workout);
