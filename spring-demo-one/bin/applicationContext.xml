@@ -24,13 +24,22 @@
 		<!-- set up constructor injection here -->
 		<constructor-arg ref="myFortune"></constructor-arg>
 	</bean>
-<bean id="CricketCoach"
-		class="com.spring.springdemo.CricketCoach">
+	<bean id="CricketCoach" class="com.spring.springdemo.CricketCoach">
 		<!-- set up setter injection here -->
-		<!-- spring will search for setFortuneService method.. set Capitalise first letter of property name (fortuneService) -->
-		
+		<!-- spring will search for setFortuneService method.. set Capitalise first 
+			letter of property name (fortuneService) -->
+
 		<property name="fortuneService" ref="myFortune"></property>
 	</bean>
+
+	<bean id="VolleyballCoach"
+		class="com.spring.springdemo.VolleyballCoach">
+		<!-- set up literal value injection here -->
+		<property name="emailAddress" value="coach@gmail.com"></property>
+		<property name="team" value="Dafodils"></property>
+	</bean>
+
+
 
 </beans>
 

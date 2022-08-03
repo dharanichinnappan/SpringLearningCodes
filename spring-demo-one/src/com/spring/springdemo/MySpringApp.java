@@ -22,7 +22,12 @@ public class MySpringApp {
 
 		String fortune = myCoach.getDailyFortuneService();
 		System.out.println(fortune);
+		
+		// Injecting literal values .. calling volleyballCoach class instead of Coach interface
+		VolleyballCoach volleyballCoach=applicationContext.getBean("VolleyballCoach",VolleyballCoach.class);
+		System.out.println(volleyballCoach.getEmailAddress() +"  " + volleyballCoach.getTeam());
 		applicationContext.close();
+
 	}
 
 }
