@@ -8,4 +8,10 @@ public class TrackCoach implements Coach {
 		return "auto aritten Trackcoach class by eclipse";
 	}
 
+	@Override
+	public String getDailyFortuneService() {
+		
+		return " TrackCoach Fortune --> All the best!!";
+	}
+
 }
