@@ -7,28 +7,36 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<!-- defining dependecncy injection here -->
+
+    <!-- Loading properties file "sport.properites" to ApplicationContext --> 
+    <context:property-placeholder location="classpath:sport.properties"/>
+    
+	<!-- defining dependency injection here .should be in the beginning -->
 	<bean id="myFortune"
 		class="com.spring.springdemo.happyFortuneService"></bean>
+		
+		
 	<!-- Defining beans here -->
+	
 	<bean id="myLoggerConfig"
 		class="com.spring.springdemo.MyLoggerConfig" init-method="initLogger">
 		<property name="rootLoggerLevel" value="FINE" />
 		<property name="printedLoggerLevel" value="FINE" />
 	</bean>
+	
 	<bean id="TrackCoach" class="com.spring.springdemo.TrackCoach">
 		<constructor-arg ref="myFortune"></constructor-arg>
 	</bean>
+	
 	<bean id="BaseballCoach"
 		class="com.spring.springdemo.BaseballCoach">
 		<!-- set up constructor injection here -->
 		<constructor-arg ref="myFortune"></constructor-arg>
 	</bean>
+	
 	<bean id="CricketCoach" class="com.spring.springdemo.CricketCoach">
 		<!-- set up setter injection here -->
-		<!-- spring will search for setFortuneService method.. set Capitalise first 
-			letter of property name (fortuneService) -->
-
+		<!-- spring will search for setFortuneService method.. set Capitalise first letter of property name (fortuneService) -->
 		<property name="fortuneService" ref="myFortune"></property>
 	</bean>
 
@@ -37,6 +45,9 @@
 		<!-- set up literal value injection here -->
 		<property name="emailAddress" value="coach@gmail.com"></property>
 		<property name="team" value="Dafodils"></property>
+		<!-- injecting values from properties file -->
+		<property name="experience" value="${volleyballcoach.experience}"></property> 
+		<property name="country" value="${volleyballcoach.country}"></property>
 	</bean>
 
 

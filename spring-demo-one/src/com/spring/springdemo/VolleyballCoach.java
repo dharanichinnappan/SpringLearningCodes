@@ -3,6 +3,8 @@ package com.spring.springdemo;
 public class VolleyballCoach implements Coach {
 	private String emailAddress;
 	private String team;
+	private String experience;
+	private String country;
 
 	
 	public String getEmailAddress() {
@@ -21,6 +23,22 @@ public class VolleyballCoach implements Coach {
 	public void setTeam(String team) {
 		System.out.println("Inside volleyball coach  Team setter method ");
 		this.team = team;
+	}
+
+	public String getExperience() {
+		return experience;
+	}
+
+	public void setExperience(String experience) {
+		this.experience = experience;
+	}
+
+	public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
 	}
 
 	@Override

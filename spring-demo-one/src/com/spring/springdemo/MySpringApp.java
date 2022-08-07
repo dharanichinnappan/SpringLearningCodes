@@ -26,6 +26,9 @@ public class MySpringApp {
 		// Injecting literal values .. calling volleyballCoach class instead of Coach interface
 		VolleyballCoach volleyballCoach=applicationContext.getBean("VolleyballCoach",VolleyballCoach.class);
 		System.out.println(volleyballCoach.getEmailAddress() +"  " + volleyballCoach.getTeam());
+		
+		//these values are loaded using properties file..sport.properties
+		System.out.println(volleyballCoach.getCountry() +" " + volleyballCoach.getExperience());
 		applicationContext.close();
 
 	}
