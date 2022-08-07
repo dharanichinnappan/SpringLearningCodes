@@ -15,20 +15,24 @@ public class MySpringApp {
 
 		// TrackCoach/BaseballCoach is the bean id mentioned in applicationContext.xml"
 		// and Coach.class is the interface
-		Coach myCoach = applicationContext.getBean("CricketCoach", Coach.class);
+		Coach myCoach = applicationContext.getBean("randomCoach", Coach.class);
 
 		String workout = myCoach.getDailyWorkout();
 		System.out.println(workout);
 
 		String fortune = myCoach.getDailyFortuneService();
 		System.out.println(fortune);
-		
-		// Injecting literal values .. calling volleyballCoach class instead of Coach interface
-		VolleyballCoach volleyballCoach=applicationContext.getBean("VolleyballCoach",VolleyballCoach.class);
-		System.out.println(volleyballCoach.getEmailAddress() +"  " + volleyballCoach.getTeam());
-		
-		//these values are loaded using properties file..sport.properties
-		System.out.println(volleyballCoach.getCountry() +" " + volleyballCoach.getExperience());
+
+		// Injecting literal values .. calling volleyballCoach class instead of Coach
+		// interface
+		VolleyballCoach volleyballCoach = applicationContext.getBean("VolleyballCoach", VolleyballCoach.class);
+		System.out.println(volleyballCoach.getEmailAddress() + "  " + volleyballCoach.getTeam());
+
+		// these values are loaded using properties file..sport.properties
+		System.out.println(volleyballCoach.getCountry() + " " + volleyballCoach.getExperience());
+
+		// It is to get a random Fortune Service
+		System.out.println(myCoach.getDailyFortuneService());
 		applicationContext.close();
 
 	}

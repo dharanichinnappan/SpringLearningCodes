@@ -12,8 +12,8 @@
     <context:property-placeholder location="classpath:sport.properties"/>
     
 	<!-- defining dependency injection here .should be in the beginning -->
-	<bean id="myFortune"
-		class="com.spring.springdemo.happyFortuneService"></bean>
+	<bean id="myFortune" class="com.spring.springdemo.happyFortuneService"></bean>
+	<bean id="randomFortune" class="com.spring.springdemo.randomFortuneService"></bean>
 		
 		
 	<!-- Defining beans here -->
@@ -49,8 +49,11 @@
 		<property name="experience" value="${volleyballcoach.experience}"></property> 
 		<property name="country" value="${volleyballcoach.country}"></property>
 	</bean>
-
-
+	
+		<!-- This bean is to get randomFortuneService ..... exercise code -->
+		<bean id="randomCoach" class="com.spring.springdemo.randomCoach">
+		<constructor-arg ref="randomFortune"></constructor-arg>
+		</bean>
 
 </beans>
 
