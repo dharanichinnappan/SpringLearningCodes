@@ -39,6 +39,8 @@ public class DemoApp {
 		System.out.println("\n Memory Loaction of myCoach" + " " + myBaseballCoach2);
 		
 		
+		//Loading init and destroy method
+		Coach myCricketCoach = applicationContext.getBean("CricketCoach", Coach.class);
 		applicationContext.close();
 		
 	}

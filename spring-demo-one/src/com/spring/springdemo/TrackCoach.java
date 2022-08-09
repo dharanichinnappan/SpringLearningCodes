@@ -12,13 +12,13 @@ public class TrackCoach implements Coach {
 
 	public TrackCoach() {
 		super();
-		// TODO Auto-generated constructor stub
+
 	}
 
 	@Override
 	public String getDailyWorkout() {
-		// TODO Auto-generated method stub
-		return "auto aritten Trackcoach class by eclipse";
+		
+		return "auto written Trackcoach class by eclipse";
 	}
 
 	@Override
@@ -27,4 +27,5 @@ public class TrackCoach implements Coach {
 		return "TrackCoach Fortune --> " + fortuneService.getDailyFortuneService();
 	}
 
+	
 }
