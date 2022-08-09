@@ -8,38 +8,61 @@
     http://www.springframework.org/schema/context/spring-context.xsd">
 
 
-   
+
 	<!-- defining dependency injection here .should be in the beginning -->
-	<bean id="myFortune" class="com.spring.springdemo.happyFortuneService"></bean>
-	<bean id="randomFortune" class="com.spring.springdemo.randomFortuneService"></bean>
-		
-		
+	<bean id="myFortune"
+		class="com.spring.springdemo.happyFortuneService"></bean>
+	<bean id="randomFortune"
+		class="com.spring.springdemo.randomFortuneService"></bean>
+
+
 	<!-- Defining beans here -->
-	
+
 	<bean id="myLoggerConfig"
 		class="com.spring.springdemo.MyLoggerConfig" init-method="initLogger">
 		<property name="rootLoggerLevel" value="FINE" />
 		<property name="printedLoggerLevel" value="FINE" />
 	</bean>
-	
-	<!-- By default beans in Spring will have a Sinlgeton Scope -->
+
+	<!-- By default beans in Spring will have a Singleton Scope -->
 	<bean id="TrackCoach" class="com.spring.springdemo.TrackCoach">
 		<constructor-arg ref="myFortune"></constructor-arg>
 	</bean>
-	
-	<!--  Setting the scope to prototype -->
+
+	<!-- Setting the scope to prototype -->
 	<bean id="BaseballCoach"
-		class="com.spring.springdemo.BaseballCoach" >
+		class="com.spring.springdemo.BaseballCoach" scope="prototype">
 		<!-- set up constructor injection here -->
 		<constructor-arg ref="myFortune"></constructor-arg>
 	</bean>
-	
-	<!-- Defining init and destroy method -->
-	<bean id="CricketCoach" class="com.spring.springdemo.CricketCoach"  init-method="doMyStartUpStuff" destroy-method="doMyCleanUpStuff">
+
+	<!-- Loading init and destroy method for singleton and prototype Scoped 
+		bean -->
+		
+	<!-- Defining init and destroy method for Singleton Scoped bean -->
+	<bean id="CricketCoach" class="com.spring.springdemo.CricketCoach"
+		init-method="doMyStartUpStuff" destroy-method="doMyCleanUpStuff">
 		<!-- set up setter injection here -->
-		<!-- spring will search for setFortuneService method.. set Capitalise first letter of property name (fortuneService) -->
+		<!-- spring will search for setFortuneService method.. set Capitalise first 
+			letter of property name (fortuneService) -->
 		<property name="fortuneService" ref="myFortune"></property>
 	</bean>
+
+	<!-- Setting the scope to prototype -->
+	<!-- Spring does not call destroy method for prototype scope bean . Destroy 
+		method can be called only by custom coding through CustomBeanProcessor -->
+
+	<bean id="FootballCoach"
+		class="com.spring.springdemo.FootballCoach" scope="prototype"
+		init-method="doMyStartUpStuff">
+		<!-- set up constructor injection here -->
+		<constructor-arg ref="myFortune"></constructor-arg>
+	</bean>
+
+	<bean id="customProcessor"
+		class="com.spring.springdemo.MyCustomBeanProcessor">
+	</bean>
+
 
 </beans>
 

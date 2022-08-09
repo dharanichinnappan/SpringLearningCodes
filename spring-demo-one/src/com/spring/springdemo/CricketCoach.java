@@ -24,15 +24,15 @@ public class CricketCoach implements Coach {
 
 		return "Cricket Coach" + fortuneService.getDailyFortuneService();
 	}
-	
-	// add an init method
-		public void doMyStartUpStuff() {
-			System.out.println("Inside init method");
-		}
 
-		// add a destroy method()
-		private void doMyCleanUpStuff() {
-			System.out.println("Inside destroy method");
-		}
+	// add an init method --> Singleton Bean scope
+	public void doMyStartUpStuff() {
+		System.out.println("Inside init method");
+	}
+
+	// add a destroy method() --> Singleton Bean scope
+	private void doMyCleanUpStuff() {
+		System.out.println("Inside destroy method");
+	}
 
 }
