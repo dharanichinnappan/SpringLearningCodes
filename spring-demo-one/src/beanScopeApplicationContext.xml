@@ -38,7 +38,7 @@
 
 	<!-- Loading init and destroy method for singleton and prototype Scoped 
 		bean -->
-		
+
 	<!-- Defining init and destroy method for Singleton Scoped bean -->
 	<bean id="CricketCoach" class="com.spring.springdemo.CricketCoach"
 		init-method="doMyStartUpStuff" destroy-method="doMyCleanUpStuff">
@@ -51,7 +51,7 @@
 	<!-- Setting the scope to prototype -->
 	<!-- Spring does not call destroy method for prototype scope bean . Destroy 
 		method can be called only by custom coding through CustomBeanProcessor -->
-
+	<!-- Need not mention destroy method in bean -->
 	<bean id="FootballCoach"
 		class="com.spring.springdemo.FootballCoach" scope="prototype"
 		init-method="doMyStartUpStuff">
