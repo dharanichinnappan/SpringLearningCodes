@@ -10,6 +10,7 @@ import org.springframework.context.annotation.PropertySource;
 //need not enter componentScan
 //@ComponentScan("com.spring.springAnnotations")
 @PropertySource("classpath:mylogger.properties")
+@PropertySource("classpath:sport.properties")
 public class SwimSportConfig {
 	
 	//define bean for sadFortuneService
