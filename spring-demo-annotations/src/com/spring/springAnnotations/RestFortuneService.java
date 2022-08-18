@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 public class RestFortuneService implements FortuneService {
 
 	@Override
-	public String getDailyFortune() {
+	public String getFortune() {
 		
 		return "This is RestFortuneService";
 	}

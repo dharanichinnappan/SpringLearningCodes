@@ -21,7 +21,7 @@ public class VolleyballCoach implements Coach {
 	@Override
 	public String getDailyFortune() {
 
-		return "VollyballCoach -- >" + fortuneService.getDailyFortune();
+		return "VollyballCoach -- >" + fortuneService.getFortune();
 	}
 
 }

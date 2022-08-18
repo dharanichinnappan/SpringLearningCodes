@@ -30,7 +30,7 @@ public class TestCoach implements Coach {
 	@Override
 	public String getDailyFortune() {
 		
-		return "TestCoach-->" + fortuneService.getDailyFortune();
+		return "TestCoach-->" + fortuneService.getFortune();
 	}
 
 }
