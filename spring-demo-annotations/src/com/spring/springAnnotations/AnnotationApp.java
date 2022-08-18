@@ -19,13 +19,18 @@ public class AnnotationApp {
 		System.out.println(myCoach.getDailyWorkout());
 		System.out.println(myCoach.getDailyFortune());
 
-		//setter method dependency injection
+		// setter method dependency injection
 		Coach cricketCoach = applicationContext.getBean("cricketCoach", Coach.class);
 		System.out.println(cricketCoach.getDailyFortune());
-		
-		//Method injection
-		Coach testCoach= applicationContext.getBean("testCoach", Coach.class);
+
+		// Method injection
+		Coach testCoach = applicationContext.getBean("testCoach", Coach.class);
 		System.out.println(testCoach.getDailyFortune());
+
+		// Field injection
+		Coach VolleyballCoach = applicationContext.getBean("volleyballCoach", Coach.class);
+		System.out.println(VolleyballCoach.getDailyFortune());
+
 		applicationContext.close();
 	}
 }
