@@ -2,10 +2,13 @@ package com.spring.springAnnotations;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 //Spring will automatically register this bean using @Component.. tennisCoach is the beanId
 @Component
+//@Scope("singleton")
+@Scope("prototype")
 public class TennisCoach implements Coach {
 
 	private FortuneService fortuneService;
