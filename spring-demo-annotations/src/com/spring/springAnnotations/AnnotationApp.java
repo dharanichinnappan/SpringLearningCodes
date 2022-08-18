@@ -19,6 +19,8 @@ public class AnnotationApp {
 		System.out.println(myCoach.getDailyWorkout());
 		System.out.println(myCoach.getDailyFortune());
 		
+		Coach cricketCoach=applicationContext.getBean("cricketCoach",Coach.class);
+			System.out.println(cricketCoach.getDailyFortune());	
 		applicationContext.close();
 	}
 }
