@@ -7,9 +7,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 @Configuration
-@ComponentScan("com.spring.springAnnotations")
+//need not enter componentScan
+//@ComponentScan("com.spring.springAnnotations")
 @PropertySource("classpath:mylogger.properties")
-public class SportConfig {
+public class SwimSportConfig {
 	
 	//define bean for sadFortuneService
 	@Bean
