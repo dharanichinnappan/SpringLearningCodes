@@ -23,7 +23,7 @@ public class TennisCoach implements Coach {
 
 	@Override
 	public String getDailyFortune() {
-		return fortuneService.getDailyFortune();
+		return "Tennis Coach --> "+fortuneService.getDailyFortune();
 	}
 
 }

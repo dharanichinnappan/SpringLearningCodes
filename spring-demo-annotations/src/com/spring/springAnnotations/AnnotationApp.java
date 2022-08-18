@@ -8,19 +8,24 @@ public class AnnotationApp {
 
 		ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext(
 				"applicationContext.xml");
-		
-		//Calling bean with default bean Id.. 
-				Coach myCoach1 = applicationContext.getBean("defaultCoach", Coach.class);
-				System.out.println("Default bean Id"+ myCoach1.getDailyWorkout());
-				
-		//Calling bean with explicitly mentioned bean Id..
+
+		// Calling bean with default bean Id..
+		Coach myCoach1 = applicationContext.getBean("defaultCoach", Coach.class);
+		System.out.println("Default bean Id" + myCoach1.getDailyWorkout());
+
+		// Calling bean with explicitly mentioned bean Id..
 		Coach myCoach = applicationContext.getBean("tennisCoach", Coach.class);
-		
+
 		System.out.println(myCoach.getDailyWorkout());
 		System.out.println(myCoach.getDailyFortune());
+
+		//setter method dependency injection
+		Coach cricketCoach = applicationContext.getBean("cricketCoach", Coach.class);
+		System.out.println(cricketCoach.getDailyFortune());
 		
-		Coach cricketCoach=applicationContext.getBean("cricketCoach",Coach.class);
-			System.out.println(cricketCoach.getDailyFortune());	
+		//Method injection
+		Coach testCoach= applicationContext.getBean("testCoach", Coach.class);
+		System.out.println(testCoach.getDailyFortune());
 		applicationContext.close();
 	}
 }
