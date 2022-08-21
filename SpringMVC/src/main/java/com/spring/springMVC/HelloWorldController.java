@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
+//adding @RequestMapping to controller helps to avoid conflict when 2 methods have same @RequestMapping names. 
+//using controller @RequestMapping name.. Spring will distinguish methods with same names
+@RequestMapping("/helloWorldController")
 public class HelloWorldController {
 
 	// method to show the initial form
