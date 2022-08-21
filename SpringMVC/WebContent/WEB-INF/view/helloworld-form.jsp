@@ -6,7 +6,7 @@
 <body>
 <b>This is helloworld-fprm.jsp</b>
 <br><br>
-<form action="processForm" method="get">
+<form action="editFormData" method="get">
 <input type="text" name="studentName" placeholder="Enter your name"/>
 <br><br>
 <input type="submit">
