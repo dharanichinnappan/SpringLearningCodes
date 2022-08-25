@@ -2,9 +2,15 @@ package com.spring.springMVC;
 
 import java.util.LinkedHashMap;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 public class Student {
 
 	private String firstName;
+	
+	@NotNull(message = "last name is required")
+	@Size(min=1,message = "last name is required")
 	private String lastName;
 	//Hard coded country options (dropdown list..select tag) in jsp page
 	private String country;

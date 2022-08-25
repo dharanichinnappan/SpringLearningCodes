@@ -4,6 +4,11 @@
 <html>
 <head>
 <title>STUDENT FORM</title>
+<style type="text/css">
+.error {
+	color: red
+}
+</style>
 </head>
 <body>
 	<b>This is student registration form.jsp</b>
@@ -18,7 +23,8 @@ First Name : <form:input path="firstName" />
 		<br>
 		<br>
 
-Last Name : <form:input path="lastName" />
+Last Name (*): <form:input path="lastName" />
+		<form:errors path="lastName" cssClass="error"></form:errors>
 		<br>
 		<br>
 
