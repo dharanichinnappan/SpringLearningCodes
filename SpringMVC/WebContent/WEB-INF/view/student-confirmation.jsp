@@ -1,39 +1,41 @@
 <!-- this is for check box -->
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
 <title>STUDENT CONFIRMATION</title>
 </head>
 <body>
-<b>This is student confirmation.jsp</b>
-<br><br>
+	<b>This is student confirmation.jsp</b>
+	<br>
+	<br> The Student is confirmed : ${student.firstName}
+	${student.lastName}
 
-The Student is confirmed : ${student.firstName} ${student.lastName}
+	<br>
+	<br> Number of free passes available : ${student.freePasses}
 
-<br><br>
+	<br>
+	<br> Postal Code:${student.postalCode}
+	
+	<br>
+	<br>The selected country is : ${student.country}
 
-The selected country is : ${student.country}
+	<br>
+	<br> The selected language is : ${student.language}
 
-<br><br>
+	<br>
+	<br> Favourite tech language is : ${student.techLanguage }
 
-The selected language is : ${student.language}
+	<br>
+	<br> Chosen Operaring System is : ${student.operatingSystem }
 
-<br><br>
+	<br>
+	<br> Companies previously worked with :
+	<ul>
+		<c:forEach var="temp" items="${student.companies}">
+			<li>${temp}</li>
+		</c:forEach>
 
-Favourite tech language is : ${student.techLanguage }
-
-<br><br>
-
-Chosen Operaring System is : ${student.operatingSystem }
-
-<br><br>
-Companies previously worked with :
-<ul>
-			<c:forEach var="temp" items="${student.companies}">
-			<li> ${temp} </li>
-			</c:forEach>
-			
-		</ul>
+	</ul>
 </body>
 </html>

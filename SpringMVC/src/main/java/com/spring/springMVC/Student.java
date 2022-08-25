@@ -2,7 +2,10 @@ package com.spring.springMVC;
 
 import java.util.LinkedHashMap;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 public class Student {
@@ -12,6 +15,17 @@ public class Student {
 	@NotNull(message = "last name is required")
 	@Size(min=1,message = "last name is required")
 	private String lastName;
+	
+	@NotNull(message = "is required")
+	@Min(value = 1,message = "must be greater than 0")
+	@Max(value= 10,message = "must be smaller or equal to 10")
+	private Integer freePasses;
+	//@Notnull will not work on int data type.. so use Integer
+	//private int freePasses;
+	
+	
+	@Pattern(regexp = "^[a-zA-Z0-9]{5}", message="only 5 chars/digits")
+	private String postalCode;
 	//Hard coded country options (dropdown list..select tag) in jsp page
 	private String country;
 	private String language;
@@ -76,6 +90,18 @@ public class Student {
 	}
 	public void setCompanies(String[] companies) {
 		this.companies = companies;
+	}
+	public Integer getFreePasses() {
+		return freePasses;
+	}
+	public void setFreePasses(Integer freePasses) {
+		this.freePasses = freePasses;
+	}
+	public String getPostalCode() {
+		return postalCode;
+	}
+	public void setPostalCode(String postalCode) {
+		this.postalCode = postalCode;
 	}
 	
 	
