@@ -41,6 +41,7 @@ public class StudentController {
 	// @valid performs validation on student object and store the result in bindingResult
 	//In the method signature, the BindingResult parameter must appear immediately after the model attribute. 
 	public String processForm(@Valid @ModelAttribute("student") Student theStudent, BindingResult bindingResult) {
+		System.out.println("Binding Results  "+ bindingResult);
 		if (bindingResult.hasErrors()) {
 			return "student-form";
 		} else {
