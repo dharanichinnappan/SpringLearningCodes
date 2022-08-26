@@ -19,8 +19,9 @@ public class Student {
 	@NotNull(message = "is required")
 	@Min(value = 1,message = "must be greater than 0")
 	@Max(value= 10,message = "must be smaller or equal to 10")
-	private Integer freePasses;
 	//@Notnull will not work on int data type.. so use Integer
+	private Integer freePasses;
+	
 	//private int freePasses;
 	
 	
@@ -28,14 +29,16 @@ public class Student {
 	private String postalCode;
 	//Hard coded country options (dropdown list..select tag) in jsp page
 	private String country;
-	private String language;
+	
 	// dropdown list options given in java class.. (select tag)
+	private String language;
 	private LinkedHashMap<String, String> languageOptions;
+	
 	//can also be given options in java files exactly similar to dropdown list
 	private String techLanguage;
 	//check box..options hard coded in jsp file
 	private String operatingSystem;
-	//check box..listed using list in student confimation page
+	//check box..listed using list in student form page
 	private String[] companies;
 	public Student() {
 		languageOptions=new LinkedHashMap<>();
