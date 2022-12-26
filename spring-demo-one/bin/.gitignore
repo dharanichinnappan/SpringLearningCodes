@@ -1,5 +1,3 @@
-/applicationContext.xml
+/beanScopeApplicationContext.xml
 /com/
 /sport.properties
-/beanScopeApplicationContext.xml
-/protypeBeanScopeApplicationContext.xml
